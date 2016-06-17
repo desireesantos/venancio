@@ -1,0 +1,29 @@
+{
+  "name": "venancio",
+  "version": "1.0.0",
+  "description": "Contagem regressiva venancio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/desireesantos/venancio.git"
+  },
+  "keywords": [
+    "js"
+  ],
+  "author": "desiree",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/desireesantos/venancio/issues"
+  },
+  "homepage": "https://github.com/desireesantos/venancio#readme",
+  "dependencies": {
+    "handlebars": "^4.0.5",
+    "hapi": "^13.4.1",
+    "inert": "^4.0.0",
+    "path": "^0.12.7",
+    "vision": "^4.1.0"
+  }
+}
