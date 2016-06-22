@@ -1,6 +1,7 @@
 'use strict'
 
 const Hapi = require('hapi');
+const Path = require('path');
 const Inert = require('inert');
 const Vision = require('Vision')
 const server = new Hapi.Server();
@@ -9,7 +10,7 @@ const server = new Hapi.Server();
 server.register([Inert, Vision]);
 server.connection({ 
     host: 'localhost',
-    port: process.env.PORT || 9000
+    port: process.env.PORT || 9000,
 })
 
 server.views({
@@ -26,6 +27,18 @@ server.route({
     handler: function (request, reply) {
         reply.view('index');
     }
+});
+
+server.route({
+  method: 'GET',
+  path: '/{filename*}',
+  handler: {
+    directory: {
+      path:    __dirname + '/arquivos',
+      listing: false,
+      index:   false
+    }
+  }
 });
 
 server.start((err) => {
